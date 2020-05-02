@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [icon]="mode === 'add' || mode === 'edit'? 'close':'arrow-back'">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" *ngIf="mode === 'add' || mode === 'edit'">
+      <ion-button (click)="save()">
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [disabled]="mode === 'view'" [(ngModel)]="contact.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" [disabled]="mode === 'view'" [(ngModel)]="contact.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Surname</ion-label>
+      <ion-input type="text" [disabled]="mode === 'view'" [(ngModel)]="contact.surname"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
