@@ -27,4 +27,6 @@
       <ion-input type="text" [disabled]="mode === 'view'" [(ngModel)]="contact.surname"></ion-input>
     </ion-item>
   </ion-list>
+  <ion-button *ngIf="mode !== 'view'" ion-button color="primary" (click)="changeAvatar()">Set avatar...</ion-button>
+  <img *ngIf="contact.avatar" [src]="contact.avatar">
 </ion-content>
